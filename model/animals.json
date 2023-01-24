@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Sheep",
+        "price": "250$"
+    },
+    {
+        "id": 2,
+        "name": "dog",
+        "price": "120$"
+    },
+    {
+        "id": 3,
+        "name": "Cow",
+        "price": "700$"
+    }
+]

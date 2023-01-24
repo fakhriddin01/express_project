@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "model": "Malibu",
+        "price": "20000$",
+        "brand": "Ravon"
+    },
+    {
+        "id": 2,
+        "model": "Cobalt",
+        "price": "12000$",
+        "brand": "Chevrolet"
+    }
+]
