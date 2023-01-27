@@ -1,8 +1,9 @@
 const {read_file, write_file} = require('../fs/fs_api')
+const {uuid} = require('uuidv4')
 
 const Animals = {
-    GET: (_, res)=>{
-        let animals = read_file('animals.json')
+    GET: (req, res)=>{
+        let animals = read_file('animals.json').filter(animal => animal.userId == req.session.logedUser.id);
         res.render('animals/animals_list', {
             title: "Animals list",
             isAnimalList: true,
@@ -34,11 +35,9 @@ const Animals = {
     POST: async(req, res)=>{
         let animal = req.body
         let animals = read_file('animals.json');
-        animals.push({id: animals.length +1, ...animal})
+        animals.push({id: uuid(), userId: req.session.logedUser.id, ...animal})
         await write_file('animals.json', animals);
-        res.render('cars/message', {
-            message: "Animal created!!!"
-        })
+        res.redirect('/animals');
     },
     PUT: async(req, res)=>{
         let animal = req.body;
@@ -54,9 +53,7 @@ const Animals = {
             }
         })
         await write_file('animals.json', animals);
-        res.render('cars/message', {
-            message: "Animal updated!!!"
-        })
+        res.redirect('animals')
     },
     DELETE: async(req, res) =>{
         let id = req.params.id;
@@ -71,9 +68,7 @@ const Animals = {
             }
         })
         await write_file('animals.json', animals);
-        res.render('cars/message', {
-            message: "Animal deleted!!!"
-        })
+        res.redirect('/animals')
     }
 }
 

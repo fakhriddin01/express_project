@@ -1,22 +1,20 @@
 [
     {
-        "id": 1,
+        "id": "b09d39b3-b6af-42f4-bf7b-dda586d01bf2",
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
         "name": "Apple",
-        "price": "2.5$"
+        "price": "2$"
     },
     {
-        "id": 2,
-        "name": "orange",
-        "price": "3$"
-    },
-    {
-        "id": 3,
-        "name": "pinapple",
-        "price": "3$"
-    },
-    {
-        "id": 4,
+        "id": "aeafca7d-1bb9-4a3b-884d-83ebfb20d5a4",
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
         "name": "Mango",
-        "price": "4.5$"
+        "price": "4$"
+    },
+    {
+        "id": "5b9f16a5-64e8-4a8e-bb2f-95f216e88dec",
+        "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
+        "name": "Orange",
+        "price": "3$"
     }
 ]

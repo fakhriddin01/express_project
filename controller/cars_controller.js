@@ -1,8 +1,10 @@
 const { read_file, write_file } = require('../fs/fs_api')
+const jwt = require('jsonwebtoken');
+const {uuid} = require('uuidv4')
 
 const Cars = {
-    GET: (_, res) => {
-        let cars = read_file('cars.json')
+    GET: (req, res) => {
+        let cars = read_file('cars.json').filter(car => car.userId === req.session.logedUser.id);
         res.render('cars/cars_list', {
             title: "Cars list",
             isCarList: true,
@@ -17,7 +19,7 @@ const Cars = {
     },
     UPDATE_CARS: (req, res)=>{
         let id = req.params.id;
-        let car = read_file('cars.json').find(car => car.id == id)
+        let car = read_file('cars.json').filer(car => car.userId == req.session.logedUser.id).find(car => car.id == id)
         res.render('cars/update_cars', {
             title: 'Update car',
             car
@@ -26,7 +28,6 @@ const Cars = {
     ONE_CAR: (req, res) =>{
         let id = req.params.id;
         let car = read_file('cars.json').find(car => car.id == id)
-        console.log(id, car);
         res.render('cars/one_car', {
             title: 'One car',
             car
@@ -34,17 +35,19 @@ const Cars = {
     },
     POST: async(req, res) => {
         const newCar = req.body
+        // let loginUser = await jwt.verify(req.session.token, process.env.SECRET_KEY);
+
         let cars = read_file('cars.json')
+        
         cars.push({
-            id: cars.length + 1,
+            id: uuid(),
+            userId: req.session.logedUser.id,
             model: newCar.model,
             price: newCar.price,
             brand: newCar.brand
         })
         await write_file('cars.json', cars)
-        res.render('cars/message', {
-            message: "Successfully created"
-        })
+        res.redirect('/cars')
     },
     PUT: async(req, res) => {
 
@@ -61,9 +64,7 @@ const Cars = {
 
        await write_file('cars.json', cars)
 
-        res.render('cars/message', {
-            message: "Successfully updated"
-        })
+        res.redirect('/cars')
     },
     DELETE: async(req, res) => {
         const car_id = req.params.id
@@ -75,9 +76,7 @@ const Cars = {
         })
 
        await write_file('cars.json', cars)
-       res.render('cars/message', {
-        message: "Successfully deleted"
-    })
+       res.redirect('/cars')
     }
 }
 

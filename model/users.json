@@ -1,12 +1,16 @@
 [
-  {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john@mail.com"
-  },
-  {
-    "id": 2,
-    "name": "John White",
-    "email": "johnwhite@mail.com"
-  }
+    {
+        "id": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
+        "username": "a",
+        "email": "a@mail.ru",
+        "password": "$2a$10$rGsGj3j6qvVjGp7BYF77u.EI5wuW7wu2zdGhbryMrk5flo5z.8AW2",
+        "role": "admin"
+    },
+    {
+        "id": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
+        "role": "user",
+        "username": "user",
+        "email": "user@mail.ru",
+        "password": "$2a$10$wFWch3a5WLO4vXD0D1XoxecVYO.bD/ntV3vwypC4Ehp5RKmky0NJ6"
+    }
 ]

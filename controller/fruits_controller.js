@@ -1,8 +1,9 @@
 const {read_file, write_file} = require('../fs/fs_api')
+const {uuid} =require('uuidv4')
 
 const Fruits = {
-    GET: (_, res)=>{
-        let fruits = read_file('fruits.json')
+    GET: (req, res)=>{
+        let fruits = read_file('fruits.json').filter(fruit => fruit.userId==req.session.logedUser.id)
         res.render('fruits/fruits_list', {
             title: "fruit_list",
             isFruitsList: true,
@@ -34,11 +35,9 @@ const Fruits = {
     POST: async(req, res)=>{
         let fruit = req.body
         let fruits = read_file('fruits.json');
-        fruits.push({id: fruits.length +1, ...fruit})
+        fruits.push({id: uuid(), userId: req.session.logedUser.id, ...fruit})
         await write_file('fruits.json', fruits);
-        res.render('cars/message', {
-            message: "Fruit added!!!"
-        })
+        res.redirect('/fruits')
     },
     PUT: async(req, res)=>{
         let fruit = req.body;
@@ -54,9 +53,7 @@ const Fruits = {
             }
         })
         await write_file('fruits.json', fruits);
-        res.render('cars/message', {
-            message: "Fruit updated"
-        })
+        res.redirect('/fruits')
     },
     DELETE: async(req, res) =>{
         let id = req.params.id;
@@ -71,9 +68,7 @@ const Fruits = {
             }
         })
         await write_file('fruits.json', fruits);
-        res.render('cars/message', {
-            message: "Fruit deleted!!!"
-        })
+        res.redirect('/fruits')
     }
 }
 

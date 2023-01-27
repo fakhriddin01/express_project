@@ -1,16 +1,29 @@
 const {read_file, write_file} = require('../fs/fs_api')
-
+const bcrypt = require('bcryptjs');
+const {uuid} = require('uuidv4')
 const Users = {
     GET: (_, res)=>{
         let users = read_file('users.json')
         res.send(users)
     },
     POST: async(req, res)=>{
+        
+        
         let user = req.body
         let users = read_file('users.json');
-        users.push({id: users.length +1, ... user})
+        let foundUser = users.find(u => u.email == user.email)
+        if(foundUser){
+            res.render('cars/message', {
+                message: "This email already used!"
+            })
+            return 
+        }
+        let salt = await bcrypt.genSalt(10);
+        let hashpsw = await bcrypt.hash(user.password, salt);
+        user.password = hashpsw;
+        users.push({id: uuid(), role: "user", ... user})
         await write_file('users.json', users);
-        res.send('user added!')
+        res.redirect('/login')
     },
     PUT: async(req, res)=>{
         let id = req.params.id;

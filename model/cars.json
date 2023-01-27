@@ -1,14 +1,30 @@
 [
     {
-        "id": 1,
-        "model": "Malibu",
-        "price": "20000$",
-        "brand": "Ravon"
+        "id": 3,
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
+        "model": "Matiz",
+        "price": "6400$",
+        "brand": "Chevrolet"
     },
     {
-        "id": 2,
-        "model": "Cobalt",
-        "price": "12000$",
+        "id": 5,
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
+        "model": "Naxia",
+        "price": "10000$",
         "brand": "Chevrolet"
+    },
+    {
+        "id": 4,
+        "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
+        "model": "matriz",
+        "price": "111",
+        "brand": "chev"
+    },
+    {
+        "id": "f78c4d3b-2bb4-4121-8012-001d349ef71a",
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
+        "model": "Matiz",
+        "price": "3333",
+        "brand": "Daewoo"
     }
 ]
