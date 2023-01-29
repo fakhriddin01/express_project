@@ -1,0 +1,96 @@
+<div class="container">
+    <h2>User's info</h2>
+        
+  <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>email</th>
+        <th>role</th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#if user}}
+        
+      <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role}}</td>
+      </tr>
+        {{else}}
+        <h1>No User</h1>
+        {{/if}}
+      
+    </tbody>
+  </table>
+</div>
+
+<div class="container-fluid">
+    <h2>User's cars List</h2>
+    <div class="card-columns">
+    {{#if cars.length}}
+    {{#each cars}}    
+        <div class="card bg-light">
+            <div class="card-body text-left">
+            <p class="card-text">Car id: {{id}}</p>
+            <p class="card-text">UserId: {{userId}}</p>
+            <p class="card-text">Model: {{model}}</p>
+            <p class="card-text">Price: {{price}}</p>
+            <p class="card-text">Brand: {{brand}}</p>
+            <a href="/cars/{{id}}"><i class="fa fa-trash text-danger mr-3"></i></a>
+            </div>
+        </div>
+    {{/each}}
+    {{else}}
+    <h1>No Cars</h1>
+    {{/if}}
+    </div>
+</div>
+<hr>
+
+<div class="container-fluid">
+    <h2>User's animal List</h2>
+    <div class="card-columns">
+    {{#if animals.length}}
+    {{#each animals}}    
+        <div class="card bg-info">
+            <div class="card-body text-left">
+            <p class="card-text">Animal id: {{id}}</p>
+            <p class="card-text">UserId: {{userId}}</p>
+            <p class="card-text">Name: {{name}}</p>
+            <p class="card-text">Price: {{price}}</p>
+            <a href="/animals/{{id}}"><i class="fa fa-trash text-danger mr-3"></i></a>
+            </div>
+        </div>
+    {{/each}}
+    {{else}}
+    <h1>No Animals</h1>
+    {{/if}}
+    </div>
+</div>
+
+<hr>
+<div class="container-fluid">
+    <h2>User's fruits List</h2>
+    <div class="card-columns">
+    {{#if fruits.length}}
+    {{#each fruits}}    
+        <div class="card bg-warning">
+            <div class="card-body text-left">
+            <p class="card-text">Fruit id: {{id}}</p>
+            <p class="card-text">UserId: {{userId}}</p>
+            <p class="card-text">Name: {{name}}</p>
+            <p class="card-text">Price: {{price}}</p>
+            <a href="/fruits/{{id}}"><i class="fa fa-trash text-danger mr-3"></i></a>
+            </div>
+        </div>
+    {{/each}}
+    {{else}}
+    <h1>No Fruit</h1>
+    {{/if}}
+    </div>
+</div>
+
+

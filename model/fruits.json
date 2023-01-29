@@ -12,9 +12,27 @@
         "price": "4$"
     },
     {
-        "id": "5b9f16a5-64e8-4a8e-bb2f-95f216e88dec",
+        "id": "ba29abae-455a-4cb5-aa04-83ba028b5f38",
+        "userId": "ee1c11f5-2acd-4a82-ad68-50e1ac2a3ce1",
+        "name": "Mango",
+        "price": "20$"
+    },
+    {
+        "id": "b15ce7b1-df7c-41da-a006-0c9a8ee377c6",
         "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
-        "name": "Orange",
+        "name": "Grape",
         "price": "3$"
+    },
+    {
+        "id": "6c33b94d-757a-4753-ba67-48dc1a814e6e",
+        "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
+        "name": "Melon",
+        "price": "2$"
+    },
+    {
+        "id": "a42d12c3-01e9-4f20-ae8e-7720fab285aa",
+        "userId": "ee1c11f5-2acd-4a82-ad68-50e1ac2a3ce1",
+        "name": "Banana",
+        "price": "2$"
     }
 ]

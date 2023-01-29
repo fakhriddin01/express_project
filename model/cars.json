@@ -21,10 +21,31 @@
         "brand": "chev"
     },
     {
-        "id": "f78c4d3b-2bb4-4121-8012-001d349ef71a",
-        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
-        "model": "Matiz",
-        "price": "3333",
-        "brand": "Daewoo"
+        "id": "c0a507ad-3d20-4296-a2dd-247cca5b4462",
+        "userId": "ee1c11f5-2acd-4a82-ad68-50e1ac2a3ce1",
+        "model": "G-63",
+        "price": "100000$",
+        "brand": "Mersedec"
+    },
+    {
+        "id": "8e759fde-6b32-4b0b-a98d-562195951ade",
+        "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
+        "model": "Spark",
+        "price": "7000$",
+        "brand": "Ravon"
+    },
+    {
+        "id": "10509c48-fa81-4f54-9102-ddfd963417be",
+        "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
+        "model": "Cobalt",
+        "price": "11000$",
+        "brand": "Chevrolet"
+    },
+    {
+        "id": "fa55c996-1e46-4d89-9a19-a27a3ddeec23",
+        "userId": "ee1c11f5-2acd-4a82-ad68-50e1ac2a3ce1",
+        "model": "Lacetti",
+        "price": "12000$",
+        "brand": "Chevrolet"
     }
 ]

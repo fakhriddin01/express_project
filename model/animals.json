@@ -18,9 +18,27 @@
         "price": "100$"
     },
     {
-        "id": "32560366-44d0-4c3d-9f97-91a0e2e145a0",
+        "id": "9abcff91-4019-4468-aed8-1ab6a2945e1b",
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
+        "name": "Carrot",
+        "price": "100$"
+    },
+    {
+        "id": "71731990-d4e0-4c9d-b702-7630b1329524",
+        "userId": "ee1c11f5-2acd-4a82-ad68-50e1ac2a3ce1",
+        "name": "Dog",
+        "price": "200$"
+    },
+    {
+        "id": "2a1c4177-a29b-4f49-830e-17c3da92b64d",
         "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
         "name": "Cow",
         "price": "400$"
+    },
+    {
+        "id": "a11b6b81-981d-492f-9a25-78255a276a69",
+        "userId": "ee1c11f5-2acd-4a82-ad68-50e1ac2a3ce1",
+        "name": "Cat",
+        "price": "40$"
     }
 ]

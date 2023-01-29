@@ -1,0 +1,36 @@
+
+<div class="container">
+    <h2>Users List</h2>
+        
+  <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>email</th>
+        <th>role</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#if users.length}}
+        {{#each users}}
+      <tr>
+        <td>{{id}}</td>
+        <td>{{username}}</td>
+        <td>{{email}}</td>
+        <td>{{role}}</td>
+        <td>
+            <a href="/update_user/{{id}}"><i class="fa fa-edit mr-3"></i></a>
+            <a href="/delete_user/{{id}}"><i class="fa fa-trash text-danger mr-3"></i></a>
+            <a href="/about_user/{{id}}">Batafsil</i></a>
+        </td>
+      </tr>
+        {{/each}}
+        {{else}}
+        <h1>No Users</h1>
+        {{/if}}
+      
+    </tbody>
+  </table>
+</div>

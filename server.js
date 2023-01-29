@@ -5,6 +5,8 @@ const animalRouter = require('./router/animal_router')
 const carRouter = require('./router/cars_router')
 const userRouter = require('./router/users_router')
 const authRouter = require('./router/auth_router')
+const adminRouter = require('./router/admin_router')
+
 const exphbs = require('express-handlebars')
 const session =require('express-session')
 const session_variable = require('./middleware/sesson_variable');
@@ -39,6 +41,7 @@ app.use(session_variable);
 app.use(fruitsRouter);
 app.use(animalRouter);
 app.use(carRouter);
+app.use(adminRouter);
 
 
 app.listen(port, ()=>{

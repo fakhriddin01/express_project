@@ -53,7 +53,7 @@ const Animals = {
             }
         })
         await write_file('animals.json', animals);
-        res.redirect('animals')
+        res.redirect('/animals')
     },
     DELETE: async(req, res) =>{
         let id = req.params.id;
