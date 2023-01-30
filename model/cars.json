@@ -1,24 +1,10 @@
 [
     {
-        "id": 3,
-        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
-        "model": "Matiz",
-        "price": "6400$",
-        "brand": "Chevrolet"
-    },
-    {
-        "id": 5,
-        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
-        "model": "Naxia",
-        "price": "10000$",
-        "brand": "Chevrolet"
-    },
-    {
         "id": 4,
         "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
         "model": "matriz",
-        "price": "111",
-        "brand": "chev"
+        "price": "6000$",
+        "brand": "chevrolet"
     },
     {
         "id": "c0a507ad-3d20-4296-a2dd-247cca5b4462",
@@ -45,7 +31,21 @@
         "id": "fa55c996-1e46-4d89-9a19-a27a3ddeec23",
         "userId": "ee1c11f5-2acd-4a82-ad68-50e1ac2a3ce1",
         "model": "Lacetti",
-        "price": "12000$",
+        "price": "11000$",
         "brand": "Chevrolet"
+    },
+    {
+        "id": "3224d889-c2c6-42fb-b7da-443704d7da8f",
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
+        "model": "Matiz",
+        "price": "6000$",
+        "brand": "Chevrolet"
+    },
+    {
+        "id": "da06a0d8-e4dc-40f6-b82b-0a91e70dc52f",
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
+        "model": "Nexia",
+        "price": "5000$",
+        "brand": "Daewoo"
     }
 ]

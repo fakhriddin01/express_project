@@ -1,9 +1,10 @@
 const {read_file, write_file} = require('../fs/fs_api')
 const {uuid} =require('uuidv4')
-
+const jwt = require('jsonwebtoken')
 const Fruits = {
-    GET: (req, res)=>{
-        let fruits = read_file('fruits.json').filter(fruit => fruit.userId==req.session.logedUser.id)
+    GET: async (req, res)=>{
+        let token = await jwt.verify(req.session.token, process.env.SECRET_KEY);
+        let fruits = read_file('fruits.json').filter(fruit => fruit.userId==token.id)
         res.render('fruits/fruits_list', {
             title: "fruit_list",
             isFruitsList: true,

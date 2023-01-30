@@ -1,9 +1,11 @@
 const {read_file, write_file} = require('../fs/fs_api')
 const {uuid} = require('uuidv4')
+const jwt = require('jsonwebtoken');
 
 const Admin = {
-    ADMIN_PANEL: (req, res)=>{
-        let users = read_file('users.json').filter(user => user.id != req.session.logedUser.id);
+    ADMIN_PANEL: async (req, res)=>{
+        let token = await jwt.verify(req.session.token, process.env.SECRET_KEY);
+        let users = read_file('users.json').filter(user => user.id != token.id);
         res.render('admin_panel/admin_panel', {
             title: "Admin panel",
             isAdminPanel: true,

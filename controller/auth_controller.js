@@ -27,12 +27,12 @@ const Auth = {
             })
             return 
         }
-        // let token = jwt.sign({ id: foundUser.id}, process.env.SECRET_KEY, {
-        //     expiresIn: '2h'
-        // })
+        let token = jwt.sign({ id: foundUser.id, role: foundUser.role}, process.env.SECRET_KEY, {
+            expiresIn: '30s'
+        })
         
         req.session.isAuthenticated = true
-        req.session.logedUser = foundUser;
+        req.session.token = token;
         res.redirect('/cars')
     },
     LOGOUT: (req, res) =>{

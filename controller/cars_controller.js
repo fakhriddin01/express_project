@@ -3,8 +3,9 @@ const jwt = require('jsonwebtoken');
 const {uuid} = require('uuidv4')
 
 const Cars = {
-    GET: (req, res) => {
-        let cars = read_file('cars.json').filter(car => car.userId === req.session.logedUser.id);
+    GET: async(req, res) => {
+        let token = await jwt.verify(req.session.token, process.env.SECRET_KEY);
+        let cars = read_file('cars.json').filter(car => car.userId === token.id);
         res.render('cars/cars_list', {
             title: "Cars list",
             isCarList: true,
@@ -19,7 +20,7 @@ const Cars = {
     },
     UPDATE_CARS: (req, res)=>{
         let id = req.params.id;
-        let car = read_file('cars.json').filer(car => car.userId == req.session.logedUser.id).find(car => car.id == id)
+        let car = read_file('cars.json').find(car => car.id == id)
         res.render('cars/update_cars', {
             title: 'Update car',
             car
@@ -35,13 +36,13 @@ const Cars = {
     },
     POST: async(req, res) => {
         const newCar = req.body
-        // let loginUser = await jwt.verify(req.session.token, process.env.SECRET_KEY);
+        let token = await jwt.verify(req.session.token, process.env.SECRET_KEY);
 
         let cars = read_file('cars.json')
         
         cars.push({
             id: uuid(),
-            userId: req.session.logedUser.id,
+            userId: token.id,
             model: newCar.model,
             price: newCar.price,
             brand: newCar.brand

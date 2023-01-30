@@ -1,9 +1,11 @@
 const {read_file, write_file} = require('../fs/fs_api')
-const {uuid} = require('uuidv4')
+const {uuid} = require('uuidv4');
+const jwt = require('jsonwebtoken');
 
 const Animals = {
-    GET: (req, res)=>{
-        let animals = read_file('animals.json').filter(animal => animal.userId == req.session.logedUser.id);
+    GET: async (req, res)=>{
+        let token = await jwt.verify(req.session.token, process.env.SECRET_KEY);
+        let animals = read_file('animals.json').filter(animal => animal.userId == token.id);
         res.render('animals/animals_list', {
             title: "Animals list",
             isAnimalList: true,

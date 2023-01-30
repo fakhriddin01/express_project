@@ -1,11 +1,41 @@
-module.exports = function(req, res, next){
+const jwt = require('jsonwebtoken')
+
+module.exports = async function(req, res, next){
     res.locals.isAuth = req.session.isAuthenticated
-    if(req.session.logedUser){
-        if(req.session.logedUser.role === 'admin')
-        res.locals.isAdmin = true
+
+    try {
+        let token= await jwt.verify(req.session.token, process.env.SECRET_KEY)
+        if(token.role == "admin"){
+            res.locals.isAdmin = true
+        }
+        else{
+            res.locals.isAdmin = false
+        }
+    } catch (error) {
+        
+            res.redirect('/login')
+            return
+        
     }
-    else{
-        res.locals.isAdmin = false
-    }
+
+
+    // if(req.session.token){
+    //     try {
+    //         let token= await jwt.verify(req.session.token, process.env.SECRET_KEY)
+
+    //         if(token.role == "admin"){
+    //             res.locals.isAdmin = true
+    //         }
+    //         else{
+    //             res.locals.isAdmin = false
+    //         }
+    //     } catch (error) {
+    //         res.redirect('/login')
+    //     }
+    // }
+    // else{
+    //     res.redirect('/login')
+    // }
+   
     next()
 }
