@@ -35,9 +35,10 @@ const Animals = {
         })
     },  
     POST: async(req, res)=>{
+        let token = await jwt.verify(req.session.token, process.env.SECRET_KEY);
         let animal = req.body
         let animals = read_file('animals.json');
-        animals.push({id: uuid(), userId: req.session.logedUser.id, ...animal})
+        animals.push({id: uuid(), userId: token.id, ...animal})
         await write_file('animals.json', animals);
         res.redirect('/animals');
     },

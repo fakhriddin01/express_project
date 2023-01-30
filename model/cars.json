@@ -1,12 +1,5 @@
 [
     {
-        "id": 4,
-        "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
-        "model": "matriz",
-        "price": "6000$",
-        "brand": "chevrolet"
-    },
-    {
         "id": "c0a507ad-3d20-4296-a2dd-247cca5b4462",
         "userId": "ee1c11f5-2acd-4a82-ad68-50e1ac2a3ce1",
         "model": "G-63",
@@ -47,5 +40,19 @@
         "model": "Nexia",
         "price": "5000$",
         "brand": "Daewoo"
+    },
+    {
+        "id": "716602d7-ae8b-43a4-a0c1-1ea2061dc3ea",
+        "userId": "2fa2a883-3165-48d9-b3cc-f62250bbaf08",
+        "model": "Cobalt",
+        "price": "11000$",
+        "brand": "Ravon"
+    },
+    {
+        "id": "0def7dfe-1509-47af-9628-fa2929c30c46",
+        "userId": "78f74b5e-7825-43bc-b8be-3a1c5183e621",
+        "model": "Matiz",
+        "price": "4000$",
+        "brand": "Chevrolet"
     }
 ]

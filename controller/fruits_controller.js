@@ -34,9 +34,10 @@ const Fruits = {
         })
     },
     POST: async(req, res)=>{
+        let token = await jwt.verify(req.session.token, process.env.SECRET_KEY);
         let fruit = req.body
         let fruits = read_file('fruits.json');
-        fruits.push({id: uuid(), userId: req.session.logedUser.id, ...fruit})
+        fruits.push({id: uuid(), userId: token.id, ...fruit})
         await write_file('fruits.json', fruits);
         res.redirect('/fruits')
     },

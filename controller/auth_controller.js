@@ -28,7 +28,7 @@ const Auth = {
             return 
         }
         let token = jwt.sign({ id: foundUser.id, role: foundUser.role}, process.env.SECRET_KEY, {
-            expiresIn: '30s'
+            expiresIn: '10m'
         })
         
         req.session.isAuthenticated = true
